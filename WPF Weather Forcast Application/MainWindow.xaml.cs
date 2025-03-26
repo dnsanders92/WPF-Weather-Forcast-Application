@@ -19,6 +19,13 @@ namespace WPF_Weather_Forcast_Application
         public MainWindow()
         {
             InitializeComponent();
+            UpdateWeather();
+        }
+        private async void UpdateWeather()
+        {
+            OpenWeatherAPI openWeatherAPI = new OpenWeatherAPI();
+            await openWeatherAPI.FetchCurrentWeather(); // You can refactor `Main` into a method like this
+            LBL_CurrentTemp.Content = openWeatherAPI.CurrentTemperature + "C";
         }
     }
 }
