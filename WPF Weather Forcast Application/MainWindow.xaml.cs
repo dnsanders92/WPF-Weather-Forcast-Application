@@ -11,9 +11,6 @@ using System.Windows.Shapes;
 
 namespace WPF_Weather_Forcast_Application
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -24,8 +21,13 @@ namespace WPF_Weather_Forcast_Application
         private async void UpdateWeather()
         {
             OpenWeatherAPI openWeatherAPI = new OpenWeatherAPI();
-            await openWeatherAPI.FetchCurrentWeather(); // You can refactor `Main` into a method like this
-            LBL_CurrentTemp.Content = openWeatherAPI.CurrentTemperature + "C";
+            await openWeatherAPI.FetchCurrentWeather();
+            LBL_City.Content = openWeatherAPI.City;
+            LBL_CurrentTemp.Content = openWeatherAPI.CurrentTemperature + "°C";
+            LBL_CurrentHumidity.Content = "Humidity: " + openWeatherAPI.CurrentHumidity + "%";
+            LBL_CurrentPressure.Content = "Air Pressure: " + openWeatherAPI.CurrentPressure + " hpa";
+            LBL_WeatherConditions.Content = openWeatherAPI.WeatherConditions;
+
         }
     }
 }
