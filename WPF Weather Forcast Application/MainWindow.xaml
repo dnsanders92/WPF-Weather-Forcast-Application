@@ -5,13 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Weather_Forcast_Application"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Background="LightBlue">
     <Grid>
-        <Label x:Name="LBL_CurrentTemp" Content="Temp" HorizontalAlignment="Left" VerticalAlignment="Top" Height="45" Width="168" Margin="81,216,0,0" FontSize="24"/>
-        <Label x:Name="LBL_CurrentHumidity" Content="Humidity" HorizontalAlignment="Left" Margin="81,292,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LBL_CurrentPressure" Content="Air Pressure" HorizontalAlignment="Left" Margin="81,323,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LBL_WeatherConditions" Content="Conditions" HorizontalAlignment="Left" Margin="81,261,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LBL_City" Content="City" HorizontalAlignment="Left" Margin="81,174,0,0" VerticalAlignment="Top" FontSize="24" Width="196"/>
+        <Label x:Name="LBL_City" Content="City" HorizontalAlignment="Left" Margin="113,217,0,0" VerticalAlignment="Top" FontSize="24" Width="196"/>
+        <Label x:Name="LBL_CurrentTemp" Content="Temp" HorizontalAlignment="Left" VerticalAlignment="Top" Height="45" Width="168" Margin="113,259,0,0" FontSize="24"/>
+        <Label x:Name="LBL_CurrentHumidity" Content="Humidity" HorizontalAlignment="Left" Margin="113,304,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LBL_CurrentPressure" Content="Air Pressure" HorizontalAlignment="Left" Margin="113,335,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LBL_WeatherConditions" Content="Conditions" HorizontalAlignment="Left" Margin="113,41,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="IMG_CurrentConditions" HorizontalAlignment="Left" Height="160" Margin="86,67,0,0" VerticalAlignment="Top" Width="165" Source="/placeholder.png"/>
 
     </Grid>
 </Window>
