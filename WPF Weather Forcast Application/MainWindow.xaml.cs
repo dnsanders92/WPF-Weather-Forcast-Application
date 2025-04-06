@@ -47,23 +47,32 @@ namespace WPF_Weather_Forcast_Application
         }
         private async void Forcast()
         {
-            Forcast Forcast = new Forcast();
-            await Forcast.FetchWeatherForcast(lat, lon);
+            Forcast forcast = new Forcast();
+            await forcast.FetchWeatherForcast(lat, lon);
 
-            LBL_HighTemp1.Content = "High " + Forcast.HighTemp[0] + "°C";
-            LBL_LowTemp1.Content = "/        Low " + Forcast.LowTemp[0] + "°C";
-
-            LBL_HighTemp2.Content = "High " + Forcast.HighTemp[1] + "°C";
-            LBL_LowTemp2.Content = "/        Low " + Forcast.LowTemp[1] + "°C";
-
-            LBL_HighTemp3.Content = "High " + Forcast.HighTemp[2] + "°C";
-            LBL_LowTemp3.Content = "/        Low " + Forcast.LowTemp[2] + "°C";
-
-            LBL_HighTemp4.Content = "High " + Forcast.HighTemp[3] + "°C";
-            LBL_LowTemp4.Content = "/        Low " + Forcast.LowTemp[3] + "°C";
-
-            LBL_HighTemp5.Content = "High " + Forcast.HighTemp[4] + "°C";
-            LBL_LowTemp5.Content = "/        Low " + Forcast.LowTemp[4] + "°C";
+            UpdateWeatherLabel(LBL_HighTemp1, LBL_LowTemp1, IMG_Icon_Day_1, forcast.HighTemp[0], forcast.LowTemp[0], forcast.IconCode[0]);
+            UpdateWeatherLabel(LBL_HighTemp2, LBL_LowTemp2, IMG_Icon_Day_2, forcast.HighTemp[1], forcast.LowTemp[1], forcast.IconCode[1]);
+            UpdateWeatherLabel(LBL_HighTemp3, LBL_LowTemp3, IMG_Icon_Day_3, forcast.HighTemp[2], forcast.LowTemp[2], forcast.IconCode[2]);
+            UpdateWeatherLabel(LBL_HighTemp4, LBL_LowTemp4, IMG_Icon_Day_4, forcast.HighTemp[3], forcast.LowTemp[3], forcast.IconCode[3]);
+            UpdateWeatherLabel(LBL_HighTemp5, LBL_LowTemp5, IMG_Icon_Day_5, forcast.HighTemp[4], forcast.LowTemp[4], forcast.IconCode[4]);
         }
+
+        private void UpdateWeatherLabel(Label highTempLabel, Label lowTempLabel, Image iconImage, double highTemp, double lowTemp, string iconCode)
+        {
+            highTempLabel.Content = $"High {highTemp}°C";
+            lowTempLabel.Content = $"/        Low {lowTemp}°C";
+
+            BitmapImage bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri($"http://openweathermap.org/img/w/{iconCode}.png", UriKind.Absolute);
+            bitmap.EndInit();
+
+            iconImage.Source = bitmap;
+        }
+        private void ChangeUnit()
+        { 
+           
+        }
+
     }
 }

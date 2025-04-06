@@ -16,14 +16,19 @@
         <Image x:Name="IMG_CurrentConditions" HorizontalAlignment="Left" Height="160" Margin="86,67,0,0" VerticalAlignment="Top" Width="165" Source="/placeholder.png"/>
         <Label x:Name="LBL_LowTemp1" Content="Low Temp" HorizontalAlignment="Left" Margin="523,84,0,0" VerticalAlignment="Top"/>
         <Label x:Name="LBL_HighTemp1" Content="High Temp" HorizontalAlignment="Left" Margin="427,84,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LBL_HighTemp2" Content="High Temp" HorizontalAlignment="Left" Margin="427,134,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LBL_HighTemp3" Content="High Temp" HorizontalAlignment="Left" Margin="427,180,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LBL_HighTemp4" Content="High Temp" HorizontalAlignment="Left" Margin="427,225,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LBL_HighTemp5" Content="High Temp" HorizontalAlignment="Left" Margin="427,268,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LBL_LowTemp2" Content="Low Temp" HorizontalAlignment="Left" Margin="523,134,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LBL_LowTemp3" Content="Low Temp" HorizontalAlignment="Left" Margin="523,180,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.511,0.017"/>
-        <Label x:Name="LBL_LowTemp4" Content="Low Temp" HorizontalAlignment="Left" Margin="523,225,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LBL_LowTemp5" Content="Low Temp" HorizontalAlignment="Left" Margin="523,268,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LBL_HighTemp2" Content="High Temp" HorizontalAlignment="Left" Margin="427,151,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LBL_HighTemp3" Content="High Temp" HorizontalAlignment="Left" Margin="427,216,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LBL_HighTemp4" Content="High Temp" HorizontalAlignment="Left" Margin="427,281,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LBL_HighTemp5" Content="High Temp" HorizontalAlignment="Left" Margin="427,346,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LBL_LowTemp2" Content="Low Temp" HorizontalAlignment="Left" Margin="523,151,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LBL_LowTemp3" Content="Low Temp" HorizontalAlignment="Left" Margin="523,216,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.511,0.017"/>
+        <Label x:Name="LBL_LowTemp4" Content="Low Temp" HorizontalAlignment="Left" Margin="523,281,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LBL_LowTemp5" Content="Low Temp" HorizontalAlignment="Left" Margin="523,346,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="IMG_Icon_Day_1" HorizontalAlignment="Left" Height="60" Margin="350,67,0,0" VerticalAlignment="Top" Width="60" Source="/placeholder.png"/>
+        <Image x:Name="IMG_Icon_Day_2" HorizontalAlignment="Left" Height="60" Margin="350,134,0,0" VerticalAlignment="Top" Width="60" Source="/placeholder.png"/>
+        <Image x:Name="IMG_Icon_Day_3" HorizontalAlignment="Left" Height="60" Margin="350,199,0,0" VerticalAlignment="Top" Width="60" Source="/placeholder.png"/>
+        <Image x:Name="IMG_Icon_Day_4" HorizontalAlignment="Left" Height="60" Margin="350,264,0,0" VerticalAlignment="Top" Width="60" Source="/placeholder.png"/>
+        <Image x:Name="IMG_Icon_Day_5" HorizontalAlignment="Left" Height="60" Margin="350,329,0,0" VerticalAlignment="Top" Width="60" Source="/placeholder.png"/>
 
     </Grid>
 </Window>
