@@ -15,8 +15,8 @@ namespace WPF_Weather_Forcast_Application
     public partial class MainWindow : Window
     {
 
-        private static string lat = "36.1881";
-        private static string lon = "-115.1765";
+        private static string lat = "51.509865";
+        private static string lon = "-0.118092";
         string city = "London";
         public static string Lat { get { return lat; } set { lat = value; } }
         public static string Lon { get { return lon; } set { lon = value; } }
@@ -47,7 +47,23 @@ namespace WPF_Weather_Forcast_Application
         }
         private async void Forcast()
         {
+            Forcast Forcast = new Forcast();
+            await Forcast.FetchWeatherForcast(lat, lon);
 
+            LBL_HighTemp1.Content = "High " + Forcast.HighTemp[0] + "°C";
+            LBL_LowTemp1.Content = "/        Low " + Forcast.LowTemp[0] + "°C";
+
+            LBL_HighTemp2.Content = "High " + Forcast.HighTemp[1] + "°C";
+            LBL_LowTemp2.Content = "/        Low " + Forcast.LowTemp[1] + "°C";
+
+            LBL_HighTemp3.Content = "High " + Forcast.HighTemp[2] + "°C";
+            LBL_LowTemp3.Content = "/        Low " + Forcast.LowTemp[2] + "°C";
+
+            LBL_HighTemp4.Content = "High " + Forcast.HighTemp[3] + "°C";
+            LBL_LowTemp4.Content = "/        Low " + Forcast.LowTemp[3] + "°C";
+
+            LBL_HighTemp5.Content = "High " + Forcast.HighTemp[4] + "°C";
+            LBL_LowTemp5.Content = "/        Low " + Forcast.LowTemp[4] + "°C";
         }
     }
 }

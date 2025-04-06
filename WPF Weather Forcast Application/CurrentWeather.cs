@@ -24,7 +24,7 @@ namespace WPF_Weather_Forcast_Application
         {
 
             string apiKey = "236908b3196ed5091106391e27eca5c9";
-            string apiUrl = $"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={apiKey}&units=metric";
+            string apiUrl = $"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&cnt={5}&appid={apiKey}&units=metric";
 
             using (HttpClient client = new HttpClient())
             {
@@ -33,7 +33,7 @@ namespace WPF_Weather_Forcast_Application
                 JObject weatherData = JObject.Parse(json);
 
                 // Current Weather & Conditions //
-                currentTemperature = (double)weatherData["main"]["temp"];
+                currentTemperature = Math.Round((double)weatherData["main"]["temp"],1);
                 currentHumidity = (double)weatherData["main"]["humidity"];
                 currentPressure = (double)weatherData["main"]["pressure"];
                 weatherConditions = (string)weatherData["weather"][0]["description"];
