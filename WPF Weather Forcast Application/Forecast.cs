@@ -6,7 +6,7 @@ using Newtonsoft.Json.Linq;
 
 namespace WPF_Weather_Forcast_Application
 {
-    internal class Forcast
+    internal class Forecast
     {
 
         private double[] highTemp = new double[5];

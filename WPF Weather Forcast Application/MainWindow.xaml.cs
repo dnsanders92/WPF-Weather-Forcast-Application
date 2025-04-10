@@ -47,7 +47,7 @@ namespace WPF_Weather_Forcast_Application
         }
         private async void Forcast()
         {
-            Forcast forcast = new Forcast();
+            Forecast forcast = new Forecast();
             await forcast.FetchWeatherForcast(lat, lon);
 
             UpdateWeatherLabel(LBL_HighTemp1, LBL_LowTemp1, IMG_Icon_Day_1, forcast.HighTemp[0], forcast.LowTemp[0], forcast.IconCode[0]);
