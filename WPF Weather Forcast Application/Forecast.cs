@@ -31,8 +31,17 @@ namespace WPF_Weather_Forcast_Application
 
                 highTemp[i] = Math.Round(data.Max(x => (double)x["main"]["temp_max"]),0);
                 lowTemp[i] = Math.Round(data.Min(x => (double)x["main"]["temp_min"]),0);
+
+            }
+            for (int i = 0; i < 5; i++) // Sets time to midday to get day icon instead of night icons.
+            {
+                DateTime date = DateTime.UtcNow.Date.AddDays(i + 1).AddHours(12); // Sets time to 12:00 PM (midday)
+                var data = JObject.Parse(json)["list"]
+                    .Where(x => DateTime.Parse(x["dt_txt"].ToString()) == date);
+
+
                 iconCode[i] = data.First()["weather"].First()["icon"].ToString();
-            } 
+            }
         }
     }
 }

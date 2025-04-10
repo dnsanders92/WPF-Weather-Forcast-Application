@@ -13,38 +13,38 @@
                 <Label x:Name="LBL_City" Content="City Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="155" Height="39" FontSize="20" FontWeight="Bold"/>
                 <Grid Margin="165,10,10,10">
                     <Label x:Name="LBL_Metrics" Content="Metrics" HorizontalAlignment="Center" VerticalAlignment="Top" Width="155" Height="39" FontSize="20" FontWeight="Bold"/>
-                    <Label x:Name="LBL_FeelsLike" Content="Feels Like" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top" Width="155"/>
-                    <Label x:Name="LBL_CurrentHumidity" Content="Humidity" HorizontalAlignment="Center" Margin="0,65,0,0" VerticalAlignment="Top" Width="155"/>
-                    <Label x:Name="LBL_CurrentPressure" Content="Air Pressure" HorizontalAlignment="Center" Margin="0,91,0,0" VerticalAlignment="Top" Width="155"/>
-                    <Label x:Name="LBL_WeatherConditions" Content="Conditions" HorizontalAlignment="Center" Margin="0,117,0,0" VerticalAlignment="Top" Width="155"/>
+                    <Label x:Name="LBL_FeelsLike" Content="Feels Like" HorizontalAlignment="Center" Margin="0,57,0,0" VerticalAlignment="Top" Width="155"/>
+                    <Label x:Name="LBL_CurrentHumidity" Content="Humidity" HorizontalAlignment="Center" Margin="0,83,0,0" VerticalAlignment="Top" Width="155"/>
+                    <Label x:Name="LBL_CurrentPressure" Content="Air Pressure" HorizontalAlignment="Center" VerticalAlignment="Top" Width="155" Margin="0,110,0,0"/>
+                    <Label x:Name="LBL_WeatherConditions" Content="Conditions" HorizontalAlignment="Center" Margin="0,135,0,0" VerticalAlignment="Top" Width="155"/>
                 </Grid>
                 <Image x:Name="IMG_CurrentConditions" HorizontalAlignment="Left" Height="130" Margin="10,54,0,0" VerticalAlignment="Top" Width="130" Source="/placeholder.png"/>
                 <Label x:Name="LBL_CurrentTemp" Content="Temp" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Width="140" Height="65" FontSize="36"/>
             </Grid>
             <Grid Margin="340,10,10,10">
-                <Label x:Name="LBL_NextFive" Content="Next Five Days" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="155" Height="39" FontSize="20" FontWeight="Bold"/>
-                <Grid x:Name="Grid_Day1" Margin="0,54,0,274" HorizontalAlignment="Center" Width="310">
-                    <Image x:Name="IMG_Icon_Day_1" HorizontalAlignment="Left" Height="55" Margin="5,0,0,0" VerticalAlignment="Center" Width="55" Source="/placeholder.png"/>
+                <Label x:Name="LBL_NextFive" Content="Next Five Days" HorizontalAlignment="Left" Margin="14,10,0,0" VerticalAlignment="Top" Width="155" Height="39" FontSize="20" FontWeight="Bold"/>
+                <Grid x:Name="Grid_Day1" Margin="0,52,0,276" HorizontalAlignment="Center" Width="310">
+                    <Image x:Name="IMG_Icon_Day_1" HorizontalAlignment="Left" Height="55" Margin="5,7,0,0" VerticalAlignment="Top" Width="55" Source="/placeholder.png"/>
                     <Label x:Name="LBL_HighTemp1" Content="High Temp" HorizontalAlignment="Left" Margin="90,16,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="LBL_LowTemp1" Content="LowTemp" HorizontalAlignment="Left" Margin="168,16,0,0" VerticalAlignment="Top"/>
                 </Grid>
-                <Grid x:Name="Grid_Day1_Copy" Margin="0,120,0,208" HorizontalAlignment="Center" Width="310">
-                    <Image x:Name="IMG_Icon_Day_2" HorizontalAlignment="Left" Height="55" Margin="5,0,0,0" VerticalAlignment="Center" Width="55" Source="/placeholder.png"/>
+                <Grid x:Name="Grid_Day1_Copy" Margin="0,114,0,214" HorizontalAlignment="Center" Width="310">
+                    <Image x:Name="IMG_Icon_Day_2" HorizontalAlignment="Left" Height="55" Margin="5,7,0,0" VerticalAlignment="Top" Width="55" Source="/placeholder.png"/>
                     <Label x:Name="LBL_HighTemp2" Content="High Temp" HorizontalAlignment="Left" Margin="90,16,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="LBL_LowTemp2" Content="LowTemp" HorizontalAlignment="Left" Margin="168,16,0,0" VerticalAlignment="Top"/>
                 </Grid>
-                <Grid x:Name="Grid_Day1_Copy1" Margin="0,186,0,142" HorizontalAlignment="Center" Width="310">
-                    <Image x:Name="IMG_Icon_Day_3" HorizontalAlignment="Left" Height="55" Margin="5,0,0,0" VerticalAlignment="Center" Width="55" Source="/placeholder.png"/>
+                <Grid x:Name="Grid_Day1_Copy1" Margin="0,176,0,152" HorizontalAlignment="Center" Width="310">
+                    <Image x:Name="IMG_Icon_Day_3" HorizontalAlignment="Left" Height="55" Margin="5,7,0,0" VerticalAlignment="Top" Width="55" Source="/placeholder.png"/>
                     <Label x:Name="LBL_HighTemp3" Content="High Temp" HorizontalAlignment="Left" Margin="90,16,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="LBL_LowTemp3" Content="LowTemp" HorizontalAlignment="Left" Margin="168,16,0,0" VerticalAlignment="Top"/>
                 </Grid>
-                <Grid x:Name="Grid_Day1_Copy2" Margin="0,252,0,76" HorizontalAlignment="Center" Width="310">
-                    <Image x:Name="IMG_Icon_Day_4" HorizontalAlignment="Left" Height="55" Margin="5,0,0,0" VerticalAlignment="Center" Width="55" Source="/placeholder.png"/>
+                <Grid x:Name="Grid_Day1_Copy2" Margin="0,238,0,90" HorizontalAlignment="Center" Width="310">
+                    <Image x:Name="IMG_Icon_Day_4" HorizontalAlignment="Left" Height="55" Margin="5,7,0,0" VerticalAlignment="Top" Width="55" Source="/placeholder.png"/>
                     <Label x:Name="LBL_HighTemp4" Content="High Temp" HorizontalAlignment="Left" Margin="90,16,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="LBL_LowTemp4" Content="LowTemp" HorizontalAlignment="Left" Margin="168,16,0,0" VerticalAlignment="Top"/>
                 </Grid>
-                <Grid x:Name="Grid_Day1_Copy3" Margin="0,323,0,5" HorizontalAlignment="Center" Width="310">
-                    <Image x:Name="IMG_Icon_Day_5" HorizontalAlignment="Left" Height="55" Margin="5,0,0,0" VerticalAlignment="Center" Width="55" Source="/placeholder.png"/>
+                <Grid x:Name="Grid_Day1_Copy3" Margin="0,300,0,28" HorizontalAlignment="Center" Width="310">
+                    <Image x:Name="IMG_Icon_Day_5" HorizontalAlignment="Left" Height="55" Margin="5,7,0,0" VerticalAlignment="Top" Width="55" Source="/placeholder.png"/>
                     <Label x:Name="LBL_HighTemp5" Content="High Temp" HorizontalAlignment="Left" Margin="90,16,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="LBL_LowTemp5" Content="LowTemp" HorizontalAlignment="Left" Margin="168,16,0,0" VerticalAlignment="Top"/>
                 </Grid>

@@ -34,6 +34,7 @@ namespace WPF_Weather_Forcast_Application
 
             LBL_City.Content = city;
             LBL_CurrentTemp.Content = CurrentWeather.CurrentTemperature + "°C";
+            LBL_FeelsLike.Content = "Feels Like: " + CurrentWeather.FeelsLikeTemperature + "°C";
             LBL_CurrentHumidity.Content = "Humidity: " + CurrentWeather.CurrentHumidity + "%";
             LBL_CurrentPressure.Content = "Air Pressure: " + CurrentWeather.CurrentPressure + " hpa";
             LBL_WeatherConditions.Content = CurrentWeather.WeatherConditions;

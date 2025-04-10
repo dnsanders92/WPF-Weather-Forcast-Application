@@ -11,10 +11,11 @@ namespace WPF_Weather_Forcast_Application
 {
     class CurrentWeather
     {
-        private double currentTemperature, currentHumidity, currentPressure;
+        private double currentTemperature, feelsLikeTemperature, currentHumidity, currentPressure;
         private string weatherConditions;
         private string weatherICON;
         public double CurrentTemperature { get { return currentTemperature; } set { currentTemperature = value; } }
+        public double FeelsLikeTemperature { get { return feelsLikeTemperature; } set { feelsLikeTemperature = value; } }
         public double CurrentHumidity { get { return currentHumidity; } set { currentHumidity = value; } }
         public double CurrentPressure { get { return currentPressure; } set { currentPressure = value; } }
         public string WeatherConditions { get { return weatherConditions; } set { weatherConditions = value; } }
@@ -34,6 +35,7 @@ namespace WPF_Weather_Forcast_Application
 
                 // Current Weather & Conditions //
                 currentTemperature = Math.Round((double)weatherData["main"]["temp"],1);
+                feelsLikeTemperature = Math.Round((double)weatherData["main"]["feels_like"],1);
                 currentHumidity = (double)weatherData["main"]["humidity"];
                 currentPressure = (double)weatherData["main"]["pressure"];
                 weatherConditions = (string)weatherData["weather"][0]["description"];
