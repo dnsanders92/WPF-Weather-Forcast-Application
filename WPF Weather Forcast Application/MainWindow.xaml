@@ -29,11 +29,23 @@
                     <TextBlock Text="5 Day Forecast"/>
                 </TabItem.Header>
             </TabItem>
+
+            <TabItem Height="auto" Focusable="False">
+                <TabItem.Header>
+                    <StackPanel>
+                        <TextBox x:Name="SearchBox" Width="150" Text="Search..." TextChanged="SearchBox_TextChanged" />
+                        <ListBox x:Name="ResultsList" Width="150" Height="auto" Visibility="Collapsed" ClipToBounds="False"/>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+
+
+
         </TabControl>
-        
+
 
         <Grid HorizontalAlignment="Center" Width="auto" Grid.Column="1">
-            <Grid >
+            <Grid>
                 <Label x:Name="LBL_City" Content="City Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="155" Height="39" FontSize="20" FontWeight="Bold"/>
                 <Grid Margin="165,10,10,10">
                     <Label x:Name="LBL_Metrics" Content="Metrics" HorizontalAlignment="Center" VerticalAlignment="Top" Width="155" Height="39" FontSize="20" FontWeight="Bold"/>

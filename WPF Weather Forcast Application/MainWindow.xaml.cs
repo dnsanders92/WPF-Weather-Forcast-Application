@@ -21,11 +21,16 @@ namespace WPF_Weather_Forcast_Application
         public static string Lat { get { return lat; } set { lat = value; } }
         public static string Lon { get { return lon; } set { lon = value; } }
 
+        private List<string> items;
+
         public MainWindow()
         {
             InitializeComponent();
             CurrentWeather();
             Forcast();
+
+            items = new List<string> { "Apple", "Banana", "Cherry", "Date", "Elderberry", "Fig", "Grape" };
+            ResultsList.ItemsSource = items;
         }
         private async void CurrentWeather()
         {
@@ -73,6 +78,16 @@ namespace WPF_Weather_Forcast_Application
         private void ChangeUnit()
         { 
            
+        }
+
+        private void SearchBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            string query = SearchBox.Text.ToLower();
+            if(items != null)
+            {
+                ResultsList.ItemsSource = items.Where(item => item.ToLower().Contains(query)).ToList();
+                ResultsList.Visibility = Visibility.Visible;
+            }
         }
 
     }
