@@ -4,6 +4,7 @@
     <!--#region Colour Region -->
     <!--Control colors.-->
     <SolidColorBrush x:Key="WindowColor">#787276</SolidColorBrush>
+    <SolidColorBrush x:Key="TabControlSolidColour">#373737</SolidColorBrush>
     <Color x:Key="TabControlColour">#373737</Color>
     <Color x:Key="TabItemColour">#333333</Color>
     <Color x:Key="ContentAreaColorLight">Yellow</Color>
@@ -58,10 +59,10 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TabControl}">
                     <Grid KeyboardNavigation.TabNavigation="Local">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Disabled">
@@ -77,14 +78,14 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <TabPanel x:Name="HeaderPanel"
-                    Grid.Row="0"
+                    Grid.Column="0"
                     Panel.ZIndex="1"
-                    Margin="0,0,4,-1"
+                    Margin="0,0,0,-1"
                     IsItemsHost="True"
                     KeyboardNavigation.TabIndex="1"
-                    Background="Transparent" />
+                    Background="{DynamicResource TabControlSolidColour}" />
                         <Border x:Name="Border"
-                  Grid.Row="1"
+                  Grid.Column="1"
                   BorderThickness="1"
                   CornerRadius="2"
                   KeyboardNavigation.TabNavigation="Local"
@@ -152,8 +153,8 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Border x:Name="Border"
-                  Margin="0,0,-4,0"
-                  BorderThickness="1,1,1,1">
+                  Margin="0,0,0,0"
+                  BorderThickness="1,1,2,1">
                             <Border.BorderBrush>
                                 <SolidColorBrush Color="{DynamicResource BorderMediumColor}" />
                             </Border.BorderBrush>
