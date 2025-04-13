@@ -21,11 +21,11 @@ namespace WPF_Weather_Forcast_Application
         public string WeatherConditions { get { return weatherConditions; } set { weatherConditions = value; } }
         public string WeatherICON { get { return weatherICON; } set { weatherICON = value; } }
 
-        public async Task FetchCurrentWeather(string lat, string lon)
+        public async Task FetchCurrentWeather(string lat, string lon, string unit)
         {
 
-            string apiKey = "236908b3196ed5091106391e27eca5c9";
-            string apiUrl = $"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&cnt={5}&appid={apiKey}&units=metric";
+            string apiKey = "83feabd1f836fa21111dbcec35f198cf";
+            string apiUrl = $"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&cnt={5}&appid={apiKey}&units={unit}";
 
             using (HttpClient client = new HttpClient())
             {
@@ -34,8 +34,8 @@ namespace WPF_Weather_Forcast_Application
                 JObject weatherData = JObject.Parse(json);
 
                 // Current Weather & Conditions //
-                currentTemperature = Math.Round((double)weatherData["main"]["temp"],1);
-                feelsLikeTemperature = Math.Round((double)weatherData["main"]["feels_like"],1);
+                currentTemperature = Math.Round((double)weatherData["main"]["temp"], 1);
+                feelsLikeTemperature = Math.Round((double)weatherData["main"]["feels_like"], 1);
                 currentHumidity = (double)weatherData["main"]["humidity"];
                 currentPressure = (double)weatherData["main"]["pressure"];
                 weatherConditions = (string)weatherData["weather"][0]["description"];

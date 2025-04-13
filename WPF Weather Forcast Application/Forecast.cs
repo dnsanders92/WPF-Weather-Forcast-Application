@@ -8,40 +8,40 @@ namespace WPF_Weather_Forcast_Application
 {
     internal class Forecast
     {
-
-        private double[] highTemp = new double[5];
-        private double[] lowTemp = new double[5];
-        private string[] iconCode = new string[5];
+        private double[] highTemp = new double[14];
+        private double[] lowTemp = new double[14];
+        private string[] iconCode = new string[14];
 
 
         public double[] HighTemp { get { return highTemp; } set { value = highTemp; } }
         public double[] LowTemp { get { return lowTemp; } set { value = lowTemp; } }
         public string[] IconCode { get { return iconCode; } set { iconCode = value; } }
-        public async Task FetchWeatherForcast(string lat, string lon)
+
+
+        public async Task FetchWeatherForecast(string lat, string lon, string unit)
         {
-            string json = await new HttpClient().GetStringAsync(
-                $"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=236908b3196ed5091106391e27eca5c9&units=metric");
 
+            string apiUrl = $"https://api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt=14&appid=83feabd1f836fa21111dbcec35f198cf&units={unit}";
 
-            for (int i = 0; i < 5; i++)
+            using (HttpClient client = new HttpClient())
             {
-                DateTime date = DateTime.UtcNow.Date.AddDays(i + 1);
-                var data = JObject.Parse(json)["list"]
-                    .Where(x => DateTime.Parse(x["dt_txt"].ToString()).Date == date);
+                string json = await client.GetStringAsync(apiUrl);
 
-                highTemp[i] = Math.Round(data.Max(x => (double)x["main"]["temp_max"]), 0);
-                lowTemp[i] = Math.Round(data.Min(x => (double)x["main"]["temp_min"]), 0);
-                iconCode[i] = data.First()["weather"].First()["icon"].ToString();
+                var forecastList = JObject.Parse(json)["list"];
 
-            }
-            for (int i = 0; i < 5; i++) // Sets time to midday to get day icon instead of night icons.
-            {
-                DateTime date = DateTime.UtcNow.Date.AddDays(i + 1).AddHours(12); // Sets time to 12:00 PM (midday)
-                var data = JObject.Parse(json)["list"]
-                    .Where(x => DateTime.Parse(x["dt_txt"].ToString()) == date);
+                int count = forecastList.Count();
+                for (int i = 0; i < Math.Min(count, 14); i++)
+                {
+                    var dayData = forecastList[i];
 
+                    double maxTemp = (double)dayData["temp"]["max"];
+                    double minTemp = (double)dayData["temp"]["min"];
+                    string icon = dayData["weather"][0]["icon"].ToString();
 
-
+                    HighTemp[i] = Math.Round(maxTemp, 0);
+                    LowTemp[i] = Math.Round(minTemp, 0);
+                    IconCode[i] = icon;
+                }
             }
         }
     }

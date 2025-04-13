@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="barometer.png" />
     <None Remove="placeholder.png" />
   </ItemGroup>
 
@@ -18,6 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\Humidity.png" />
+    <Resource Include="Images\FeelsLike.png" />
+    <Resource Include="Images\Barometer.png" />
     <Resource Include="placeholder.png" />
   </ItemGroup>
 
