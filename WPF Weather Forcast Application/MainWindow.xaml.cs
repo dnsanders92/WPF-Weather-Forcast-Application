@@ -27,17 +27,10 @@ namespace WPF_Weather_Forcast_Application
         {
             InitializeComponent();
 
-            var capitalCities = new List<(string City, double Latitude, double Longitude)>
-            {
-                ("London", 51.5074, -0.1278),
-                ("Paris", 48.8566, 2.3522),
-                ("Berlin", 52.5200, 13.4050),
-                ("Madrid", 40.4168, -3.7038),
-                ("Rome", 41.9028, 12.4964)
-            };
-
-            CurrentWeather();
+            LBL_City.Content = city;
             Combo_Units.SelectionChanged += Combo_Units_SelectionChanged;
+            Combo_Cities.SelectionChanged += Combo_Cities_SelectionChanged;
+            CurrentWeather();
             Forecast();
 
         }
@@ -46,7 +39,6 @@ namespace WPF_Weather_Forcast_Application
             CurrentWeather CurrentWeather = new CurrentWeather();
             await CurrentWeather.FetchCurrentWeather(lat, lon, unit);
 
-            LBL_City.Content = city;
             LBL_CurrentTemp.Content = CurrentWeather.CurrentTemperature + unitIcon;
             LBL_FeelsLike.Content = "Feels Like: " + CurrentWeather.FeelsLikeTemperature + unitIcon;
             LBL_CurrentHumidity.Content = "Humidity: " + CurrentWeather.CurrentHumidity + "%";
@@ -108,10 +100,8 @@ namespace WPF_Weather_Forcast_Application
             var comboBox = sender as ComboBox;
             if (comboBox?.SelectedItem is ComboBoxItem selectedItem)
             {
-                // Update the unit string based on the selected item's Name
                 unit = selectedItem.Name;
 
-                // Update the unit icon
                 unitIcon = unit switch
                 {
                     "metric" => "°C",
@@ -120,15 +110,64 @@ namespace WPF_Weather_Forcast_Application
                     _ => "°"
                 };
 
-                // Refresh the weather forecast
                 CurrentWeather();
                 Forecast();
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Combo_Cities_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // Cast sender to ComboBox
+            ComboBox comboBox = sender as ComboBox;
+            if (comboBox == null || comboBox.SelectedItem == null)
+                return;
 
+
+            ComboBoxItem selectedItem = comboBox.SelectedItem as ComboBoxItem;
+            if (selectedItem == null)
+                return;
+
+            string city = selectedItem.Content.ToString();
+
+            switch (city)
+            {
+                case "London":
+                    city = "London";
+                    lat = "51.5074";
+                    lon = "-0.1278";
+                    break;
+                case "Paris":
+                    city = "Paris";
+                    lat = "48.8566";
+                    lon = "2.3522";
+                    break;
+                case "Berlin":
+                    city = "Berlin";
+                    lat = "52.5200";
+                    lon = "13.4050";
+                    break;
+                case "Madrid":
+                    city = "Madrid";
+                    lat = "40.4168";
+                    lon = "-3.7038";
+                    break;
+                case "Rome":
+                    city = "Rome";
+                    lat = "41.9028";
+                    lon = "12.4964";
+                    break;
+                default:
+                    lat = string.Empty;
+                    lon = string.Empty;
+                    break;
+            }
+            if (LBL_City != null)
+            {
+                LBL_City.Content = city;
+            }
+            CurrentWeather();
+            Forecast();
         }
+
     }
 }

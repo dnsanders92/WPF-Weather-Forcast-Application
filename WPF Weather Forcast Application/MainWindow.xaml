@@ -38,9 +38,15 @@
     </Window.Resources>
 
     <Grid>
-        <TextBox x:Name="Txt_CityName" Panel.ZIndex="1" Text="Search City . . ." HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" Padding="0,0,10,0" Margin="140,3,220,0"/>
-        <Button x:Name="Btn_ChangeCity" Content="Search" Panel.ZIndex="1" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="20,0,20,0" Margin="425,3,0,0" Click="Button_Click"/>
-
+        
+        <ComboBox x:Name="Combo_Cities" SelectionChanged="Combo_Cities_SelectionChanged" Panel.ZIndex="1" HorizontalAlignment="Center" VerticalAlignment="Top" SelectedIndex="0" Width="100" Margin="0,0,0,0">
+            <ComboBoxItem Name="London" Content="London"/>
+            <ComboBoxItem Name="Paris" Content="Paris"/>
+            <ComboBoxItem Name="Berlin" Content="Berlin"/>
+            <ComboBoxItem Name="Madrid" Content="Madrid"/>
+            <ComboBoxItem Name="Rome" Content="Rome"/>
+        </ComboBox>
+        
         <ComboBox x:Name="Combo_Units" SelectionChanged="Combo_Units_SelectionChanged" Panel.ZIndex="1" HorizontalAlignment="Right" VerticalAlignment="Top" SelectedIndex="0" Margin="0,0,20,0">
             <ComboBoxItem Name="metric" Content="Celsius"/>
             <ComboBoxItem Name="imperial" Content="Fahrenheit"/>
@@ -63,7 +69,7 @@
 
                                 <Image x:Name="IMG_CurrentConditions" Source="placeholder.png" DockPanel.Dock="Left" Width="100" Height="100" Margin="100,40,0,0"/>
                                 <Label x:Name="LBL_CurrentTemp" Content="Temp" DockPanel.Dock="Left" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="50,20,0,0"/>
-                                <Label x:Name="LBL_City" FontSize="40"  VerticalAlignment="Center" Padding="30,20,0,0">City</Label>
+                                <Label x:Name="LBL_City" FontSize="40" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,20,100,0">City</Label>
                             </DockPanel>
                         </Grid>
 
@@ -216,5 +222,6 @@
             </TabItem>
 
         </TabControl>
+
     </Grid>
 </Window>
